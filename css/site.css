@@ -101,13 +101,14 @@ body {
     background: url('https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1600') no-repeat center center/cover;
 }
 
+/* ИСПРАВЛЕНО: Теперь плотный красивый темный градиент полностью укрывает всю область */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #121212 30%, rgba(18, 18, 18, 0.4) 100%);
+    background: linear-gradient(to right, #121212 40%, rgba(18, 18, 18, 0.7) 70%, rgba(18, 18, 18, 0.4) 100%);
     z-index: 1;
 }
 
@@ -345,6 +346,7 @@ body {
     position: relative;
 }
 
+/* ИСПРАВЛЕНО: Полное покрытие и Flexbox-выравнивание текста по центру серой маски */
 .member-overlay {
     position: absolute;
     top: 0;
@@ -356,6 +358,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -366,6 +369,7 @@ body {
     font-size: 1.1rem;
     text-align: center;
     font-weight: 600;
+    width: 100%;
 }
 
 .team-member:hover {
@@ -511,13 +515,13 @@ body {
 
 @media(max-width: 1024px) {
     .menu-container-triple {
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media(max-width: 768px) {
     .container-grid, .menu-container-triple, .locations-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
@@ -526,6 +530,6 @@ body {
     }
 
     .nav-links-stack {
-        display: none; 
+        display: none;
     }
 }
